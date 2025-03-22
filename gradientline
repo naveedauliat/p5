@@ -1,0 +1,35 @@
+function setup() {
+  createCanvas(800, 600);
+  noLoop();
+}
+
+function draw() {
+  background(0);
+
+  // Define control points for the spline
+  let points = [
+    { x: 100, y: 300 },
+    { x: 200, y: 100 },
+    { x: 400, y: 400 },
+    { x: 600, y: 200 },
+    { x: 700, y: 300 }
+  ];
+
+  // Draw the spline with a gradient
+  drawGradientSpline(points);
+}
+
+function drawGradientSpline(points) {
+  noFill();
+  beginShape();
+  for (let i = 0; i < points.length; i++) {
+    // Calculate the gradient color
+    let gradientColor = lerpColor(color(0), color(255), i / (points.length - 1));
+    stroke(gradientColor);
+    strokeWeight(4);
+
+    // Add the vertex for the spline
+    vertex(points[i].x, points[i].y);
+  }
+  endShape();
+}
