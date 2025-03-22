@@ -1,0 +1,29 @@
+function setup() {
+	createCanvas(windowWidth, windowHeight);
+	background(0);
+}
+
+function draw() {
+
+
+	for (let i = 0; i < 20; i++) {
+		noFill();
+		
+		let y2 = i*random(height*random(0.001,0.4));
+		
+		stroke(random(i*random(0,255)), random(i*50), random(i*100), 10);
+		strokeWeight(1);
+	//	scale(1.1);
+		rotate(PI / 6);
+		bezier(random(0,90), y2, width/2, 4, 3*width/4, height*0.75, width, i*random(height/2));
+		
+	//	stroke(random(i*random(0,255)), random(i*50), random(i*100), 10);
+	//	strokeWeight(5);
+	//	curve(-100,0, y2, width, 4, -100, 100,50);
+		
+		
+
+	}
+
+	
+}
